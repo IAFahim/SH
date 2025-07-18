@@ -45,9 +45,6 @@ if ! [[ "$selected_text" =~ ^[[:print:][:space:]]+$ ]]; then
     exit 0
 fi
 
-# Notify the user what's happening.
-# Using -t to set a timeout in milliseconds (e.g., 3000ms = 3s)
-notify-send -t 3000 "Reading Aloud..." "$(echo "$selected_text" | cut -c 1-100)..."
 
 # Play the selected text. gtts-cli will auto-detect the language.
 # The `||` part will catch failures from either gtts-cli or mpg123.
