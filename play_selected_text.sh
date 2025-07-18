@@ -52,6 +52,5 @@ notify-send -t 3000 "Reading Aloud..." "$(echo "$selected_text" | cut -c 1-100).
 # Play the selected text. gtts-cli will auto-detect the language.
 # The `||` part will catch failures from either gtts-cli or mpg123.
 gtts-cli "$selected_text" | mpg123 --quiet - || {
-  notify-send -u critical "Text-to-Speech Error" "Failed to generate or play audio. Check internet connection."
   exit 1
 }
